@@ -1,62 +1,50 @@
-## SaaSify
+# JHON PIPELINE — Site Vitrine
 
-SaaSify is a SaaS landing page template built with Next.js and Tailwind CSS.
+Site institutionnel one-page pour **JHON PIPELINE**, entreprise spécialisée en soudure, tuyauterie industrielle et pose de pipelines à Abidjan, Côte d'Ivoire.
 
-## Requirements
+## Stack
 
-Before installing SaaSify, ensure you have:
+- **Next.js 16** (App Router, Turbopack)
+- **Tailwind CSS v4** + shadcn/ui
+- **framer-motion** — animations
+- **next-themes** — dark / light mode
+- **React Context** — système bilingue FR / EN (sans lib i18n externe)
+- **react-hook-form + zod** — validation du formulaire de contact
+- **nodemailer** — envoi email SMTP via API Route
 
-- [Node.js](https://nodejs.org/): Version 18.x or higher
-- [npm](https://www.npmjs.com/): Version 9.x or higher (comes with Node.js)
+## Sections
+
+Hero → Certifications → Indicateurs → À Propos → Valeurs → Services → Galerie → Témoignages → FAQ → CTA → Contact → Footer
 
 ## Installation
 
-Install dependencies:
-
 ```bash
-npm install --force
+npm install
 ```
 
-Note: This project requires React 19 and other modern dependencies. You may see peer dependency warnings, which can be safely ignored.
+## Configuration
 
-## Getting Started
+Copier `.env.local.example` en `.env.local` et renseigner les variables SMTP :
 
-Run the development server:
+```env
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your@email.com
+SMTP_PASS=yourpassword
+CONTACT_EMAIL=infos@jhonpipeline.com
+```
+
+## Développement
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Production
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Libraries
-
-SaaSify uses following open-source libraries:
-
-- [Tailwind CSS](https://tailwindcss.com)
-- [Shadcn UI](https://ui.shadcn.com)
-- [MagicUI](https://magicui.dev)
-- [ReUI](https://v1.reui.io)
-- [Motion](https://motion.dev)
-- [Lucide Icons](https://lucide.dev)
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
